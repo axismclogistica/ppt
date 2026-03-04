@@ -29,22 +29,23 @@ position:fixed;
 width:100%;
 top:0;
 left:0;
-background:rgba(11,18,32,0.95);
-backdrop-filter:blur(12px);
+background:white; /* cambiado a blanco */
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 10%;
+padding:20px 10%;
 z-index:1000;
-border-bottom:1px solid rgba(255,255,255,0.05);
+border-bottom:1px solid #e5e7eb;
 }
 
 nav img{
-height:55px;
+height:90px; /* logo más grande */
+width:auto;
+display:block;
 }
 
 nav a{
-color:#cbd5e1;
+color:#1e293b; /* texto oscuro */
 text-decoration:none;
 margin-left:30px;
 font-weight:500;
@@ -58,7 +59,7 @@ color:#00d4c0;
 /* HERO */
 
 .hero{
-padding:200px 10% 120px;
+padding:230px 10% 120px; /* ajustado por logo */
 text-align:center;
 background:radial-gradient(circle at top left,#1e293b,#0b1220 60%);
 }
