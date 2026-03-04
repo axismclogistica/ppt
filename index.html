@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -24,9 +23,41 @@ line-height:1.6;
 overflow-x:hidden;
 }
 
+/* NAVBAR */
+
+nav{
+position:fixed;
+width:100%;
+top:0;
+left:0;
+background:rgba(15,23,42,0.9);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 10%;
+z-index:1000;
+}
+
+nav img{
+height:50px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+margin-left:20px;
+}
+
+nav a:hover{
+color:#00b3a4;
+}
+
+/* SECTIONS */
+
 section{
-padding:100px 10%;
-position:relative;
+padding:120px 10%;
 }
 
 h1,h2,h3{
@@ -41,6 +72,8 @@ font-weight:600;
 p{
 color:#cbd5e1;
 }
+
+/* BUTTON */
 
 .btn{
 display:inline-block;
@@ -63,7 +96,7 @@ box-shadow:0 0 30px rgba(0,179,164,0.7);
 
 .hero{
 text-align:center;
-padding:140px 10%;
+padding-top:180px;
 background:linear-gradient(135deg,#0f172a,#1e293b);
 }
 
@@ -109,12 +142,6 @@ background:#273449;
 box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
-/* TARIFAS */
-
-.pricing{
-background:#111827;
-}
-
 /* CTA */
 
 .cta{
@@ -134,7 +161,7 @@ color:#94a3b8;
 font-size:14px;
 }
 
-/* ANIMATIONS */
+/* ANIMATION */
 
 @keyframes fadeUp{
 from{
@@ -146,19 +173,32 @@ opacity:1;
 transform:translateY(0);
 }
 }
-
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+<nav>
+<img src="logo-axis.png" alt="Axis MC Logística">
+<div>
+<a href="#servicios">Servicios</a>
+<a href="#tarifas">Tarifas</a>
+<a href="#contacto">Contacto</a>
+</div>
+</nav>
+
+<!-- HERO -->
 <section class="hero">
 <h1>Axis MC Logística</h1>
 <p>Entregas estratégicas en el GAM que protegen tu reputación y aceleran tu crecimiento.</p>
-<a href="https://wa.me/506XXXXXXXX" class="btn">Solicitar Información</a>
+<a href="https://wa.me/50662532958" class="btn" target="_blank">
+Hablar por WhatsApp
+</a>
 </section>
 
-<section>
+<!-- PROBLEMA -->
+<section id="servicios">
 <h2>El Problema del Mercado</h2>
 <div class="grid">
 <div class="card">
@@ -180,18 +220,8 @@ transform:translateY(0);
 </div>
 </section>
 
-<section>
-<h2>Nuestra Solución</h2>
-<div class="grid">
-<div class="card"><p>✔ Entregas el mismo día</p></div>
-<div class="card"><p>✔ Atención directa por WhatsApp</p></div>
-<div class="card"><p>✔ Confirmación con foto y ubicación</p></div>
-<div class="card"><p>✔ Reporte diario empresarial</p></div>
-<div class="card"><p>✔ Servicio Express ≤ 2 horas</p></div>
-</div>
-</section>
-
-<section class="pricing">
+<!-- TARIFAS -->
+<section id="tarifas">
 <h2>Estructura Tarifaria</h2>
 <div class="grid">
 <div class="card"><h3>Mismo Cantón</h3><p><strong>₡2.500</strong></p></div>
@@ -202,22 +232,14 @@ transform:translateY(0);
 </div>
 </section>
 
-<section>
-<h2>Modalidades de Pago</h2>
-<div class="grid">
-<div class="card"><p>Pago contra entrega</p></div>
-<div class="card"><p>SINPE Móvil</p></div>
-<div class="card"><p>Transferencia bancaria</p></div>
-<div class="card"><p>Facturación mensual empresarial</p></div>
-<div class="card"><p>Planes corporativos preferenciales</p></div>
-</div>
-</section>
-
-<section class="cta">
+<!-- CTA -->
+<section class="cta" id="contacto">
 <h2>Convierte tu logística en ventaja competitiva</h2>
 <p>Cada entrega es una oportunidad para fortalecer tu marca.</p>
 <br>
-<a href="https://wa.me/506XXXXXXXX" class="btn">Hablar por WhatsApp</a>
+<a href="https://wa.me/50662532958" class="btn" target="_blank">
+Contactar Ahora
+</a>
 </section>
 
 <footer>
