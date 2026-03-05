@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -29,19 +30,23 @@ position:fixed;
 width:100%;
 top:0;
 left:0;
-background:#000; /* negro */
+background:#000;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 10%;
+padding:22px 10%;
 z-index:1000;
-border-bottom:1px solid #111;
+transition:0.3s;
+}
+
+nav.scrolled{
+padding:15px 10%;
+background:#000;
+box-shadow:0 10px 30px rgba(0,0,0,0.7);
 }
 
 nav img{
-height:90px; /* logo más grande */
-width:auto;
-display:block;
+height:85px;
 }
 
 nav a{
@@ -59,26 +64,32 @@ color:#00d4c0;
 /* HERO */
 
 .hero{
-padding:230px 10% 120px; /* ajustado por logo */
+padding:250px 10% 140px;
 text-align:center;
-background:radial-gradient(circle at top left,#1e293b,#0b1220 60%);
+
+background:
+linear-gradient(rgba(11,18,32,0.85),rgba(11,18,32,0.95)),
+url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d");
+
+background-size:cover;
+background-position:center;
 }
 
 .hero h1{
-font-size:56px;
+font-size:60px;
 font-weight:700;
 margin-bottom:20px;
 }
 
 .hero p{
 font-size:20px;
-color:#94a3b8;
+color:#cbd5f5;
 margin-bottom:40px;
 }
 
 .btn{
 display:inline-block;
-padding:15px 40px;
+padding:16px 42px;
 background:linear-gradient(90deg,#00d4c0,#0066ff);
 color:white;
 text-decoration:none;
@@ -90,7 +101,7 @@ box-shadow:0 10px 30px rgba(0,212,192,0.4);
 
 .btn:hover{
 transform:translateY(-3px);
-box-shadow:0 15px 40px rgba(0,212,192,0.7);
+box-shadow:0 15px 40px rgba(0,212,192,0.8);
 }
 
 /* SECTIONS */
@@ -100,10 +111,12 @@ padding:120px 10%;
 }
 
 h2{
-font-size:36px;
-margin-bottom:40px;
+font-size:38px;
+margin-bottom:60px;
 text-align:center;
 }
+
+/* GRID */
 
 .grid{
 display:grid;
@@ -111,20 +124,65 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:35px;
 }
 
+/* CARDS */
+
 .card{
 background:#111827;
-padding:35px;
+padding:40px;
 border-radius:20px;
 transition:0.4s;
 border:1px solid rgba(255,255,255,0.05);
+
+opacity:0;
+transform:translateY(40px);
+animation:fadeUp 0.8s forwards;
 }
 
 .card:hover{
-transform:translateY(-8px);
-border:1px solid rgba(0,212,192,0.4);
+transform:translateY(-10px);
+border:1px solid rgba(0,212,192,0.5);
+box-shadow:0 20px 50px rgba(0,0,0,0.6);
 }
 
-/* CALCULADORA */
+.card i{
+font-size:35px;
+margin-bottom:15px;
+display:block;
+}
+
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* STATS */
+
+.stats{
+background:#0f172a;
+text-align:center;
+}
+
+.stat-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:40px;
+}
+
+.stat{
+font-size:40px;
+font-weight:700;
+color:#00d4c0;
+}
+
+.stat p{
+font-size:16px;
+color:#94a3b8;
+margin-top:10px;
+}
+
+/* CALCULATOR */
 
 .calculator{
 background:#0f172a;
@@ -159,7 +217,7 @@ background:linear-gradient(135deg,#00d4c0,#0066ff);
 text-align:center;
 }
 
-/* WHATS FLOAT */
+/* WHATSAPP */
 
 .whatsapp-float{
 position:fixed;
@@ -167,12 +225,19 @@ bottom:25px;
 right:25px;
 background:#25D366;
 color:white;
-padding:15px 18px;
+padding:18px 20px;
 border-radius:50%;
-font-size:22px;
+font-size:24px;
 box-shadow:0 10px 25px rgba(0,0,0,0.4);
 text-decoration:none;
+transition:0.3s;
 }
+
+.whatsapp-float:hover{
+transform:scale(1.1);
+}
+
+/* FOOTER */
 
 footer{
 text-align:center;
@@ -181,69 +246,130 @@ background:#080d18;
 color:#64748b;
 font-size:14px;
 }
+
 </style>
 </head>
 
 <body>
 
 <nav>
+
 <img src="https://github.com/axismclogistica/axis-mc-logistica/blob/main/Logo%20Axismc.png?raw=true">
+
 <div>
 <a href="#servicios">Servicios</a>
 <a href="#tarifas">Tarifas</a>
 <a href="#calculadora">Cotizador</a>
 <a href="#contacto">Contacto</a>
 </div>
+
 </nav>
 
 <section class="hero">
+
 <h1>Soluciones Logísticas Empresariales</h1>
+
 <p>Convertimos cada entrega en una ventaja competitiva para tu negocio.</p>
+
 <a href="https://api.whatsapp.com/send?phone=50662532958&text=Hola%20Axis%20MC%20Logística,%20quiero%20información." target="_blank" class="btn">
 Hablar con un Asesor
 </a>
+
+</section>
+
+<section class="stats">
+
+<div class="stat-grid">
+
+<div>
+<div class="stat">+500</div>
+<p>Entregas completadas</p>
+</div>
+
+<div>
+<div class="stat">98%</div>
+<p>Satisfacción de clientes</p>
+</div>
+
+<div>
+<div class="stat">24h</div>
+<p>Disponibilidad logística</p>
+</div>
+
+<div>
+<div class="stat">GAM</div>
+<p>Cobertura principal</p>
+</div>
+
+</div>
+
 </section>
 
 <section id="servicios">
+
 <h2>Nuestro Valor Diferencial</h2>
+
 <div class="grid">
-<div class="card">Entregas el mismo día en el GAM</div>
-<div class="card">Confirmación con foto y ubicación</div>
-<div class="card">Servicio Express ≤ 2 horas</div>
-<div class="card">Atención directa y personalizada</div>
+
+<div class="card">🚚 Entregas el mismo día en el GAM</div>
+
+<div class="card">📸 Confirmación con foto y ubicación</div>
+
+<div class="card">⚡ Servicio Express ≤ 2 horas</div>
+
+<div class="card">🤝 Atención directa y personalizada</div>
+
 </div>
+
 </section>
 
 <section id="tarifas">
+
 <h2>Estructura Tarifaria</h2>
+
 <div class="grid">
-<div class="card"><strong>Mismo Cantón:</strong><br>₡2.500</div>
-<div class="card"><strong>Interurbano GAM:</strong><br>₡3.000 – ₡3.500</div>
-<div class="card"><strong>Zonas Extendidas:</strong><br>₡4.000 – ₡6.000</div>
-<div class="card"><strong>Express:</strong><br>₡5.000 – ₡7.000</div>
-<div class="card"><strong>Fuera del GAM:</strong><br>₡800 por km</div>
+
+<div class="card"><strong>Mismo Cantón</strong><br>₡2.500</div>
+
+<div class="card"><strong>Interurbano GAM</strong><br>₡3.000 – ₡3.500</div>
+
+<div class="card"><strong>Zonas Extendidas</strong><br>₡4.000 – ₡6.000</div>
+
+<div class="card"><strong>Express</strong><br>₡5.000 – ₡7.000</div>
+
+<div class="card"><strong>Fuera del GAM</strong><br>₡800 por km</div>
+
 </div>
+
 </section>
 
 <section id="calculadora">
+
 <h2>Calculadora de Envío por Kilómetro</h2>
 
 <div class="calculator">
+
 <p>Ingrese la cantidad de kilómetros fuera del GAM:</p>
+
 <input type="number" id="km" placeholder="Ejemplo: 15">
 
 <button class="btn" onclick="calcular()">Calcular</button>
 
 <div class="result" id="resultado"></div>
+
 </div>
+
 </section>
 
 <section class="cta" id="contacto">
+
 <h2>Impulsa tu logística hoy mismo</h2>
 <br>
+
 <a href="https://api.whatsapp.com/send?phone=50662532958&text=Quiero%20cotizar%20envíos." target="_blank" class="btn">
 Solicitar Cotización
 </a>
+
 </section>
 
 <a href="https://api.whatsapp.com/send?phone=50662532958" target="_blank" class="whatsapp-float">
@@ -255,18 +381,38 @@ Solicitar Cotización
 </footer>
 
 <script>
+
 function calcular(){
+
 let km = document.getElementById("km").value;
+
 let tarifaBase = 2500;
+
 let costoKm = 800;
+
 if(km > 0){
+
 let total = tarifaBase + (km * costoKm);
-document.getElementById("resultado").innerHTML = 
+
+document.getElementById("resultado").innerHTML =
 "Costo estimado: ₡" + total.toLocaleString();
-} else {
+
+}else{
+
 document.getElementById("resultado").innerHTML = "Ingrese una distancia válida.";
+
 }
+
 }
+
+window.addEventListener("scroll", function(){
+
+let nav = document.querySelector("nav");
+
+nav.classList.toggle("scrolled", window.scrollY > 50);
+
+});
+
 </script>
 
 </body>
